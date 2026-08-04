@@ -2,7 +2,7 @@ name: Generate Profile Card
 
 on:
   schedule:
-    - cron: '0 0 * * *' # daily
+    - cron: '0 0 * * *'  # Runs at 00:00 daily
   workflow_dispatch:
   push:
     branches:
@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
